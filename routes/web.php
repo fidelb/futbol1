@@ -25,4 +25,6 @@ Route::resource('equips', 'App\Http\Controllers\EquipController')->middleware(['
 
 Route::resource('partits', 'App\Http\Controllers\PartitController')->middleware(['auth']);
 
+Route::resource('jugadors', 'App\Http\Controllers\JugadorController')->middleware(['auth']);
+
 require __DIR__.'/auth.php';

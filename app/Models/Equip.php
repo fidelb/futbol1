@@ -11,13 +11,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property $equip
  * @property $created_at
  * @property $updated_at
+ * 
+ * @property partitsComLocal $partit
+ * @property partitsComVisitant $partit
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Equip extends Model
 {
-    
+    private $partits;
+
     static $rules = [
 		'equip' => 'required',
     ];
@@ -39,6 +43,21 @@ class Equip extends Model
     public function partitsComVisitant()
     {
         return $this->hasMany('App\Models\Partit', 'equipVisitant_id', 'id');
+    }
+
+    public function partitsJugats()
+    {
+        //obtenir tots els partits jugats com a local o visitants
+        //ordenats per data DESC
+        $partitsL = $this->partitsComLocal;
+        $partitsV = $this->partitsComVisitant;
+        $merged = $partitsL->merge($partitsV);
+        return $merged->sortByDesc('data');
+    }
+
+    public function jugadors()
+    {
+        return $this->hasMany('App\Models\Jugador', 'equip_id', 'id');
     }
 
 

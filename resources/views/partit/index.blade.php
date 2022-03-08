@@ -51,8 +51,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $partit->data }}</td>
-											<td>{{ $partit->equipLocal_id }}</td>
-											<td>{{ $partit->equipVisitant_id }}</td>
+											<td>{{ $partit->equipLocal->equip }}</td>
+											<td>{{ $partit->equipVisitant->equip }}</td>
 											<td>{{ $partit->golsLocal }}</td>
 											<td>{{ $partit->golsVisitant }}</td>
 

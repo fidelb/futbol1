@@ -25,7 +25,12 @@
                     <x-nav-link :href="route('partits.index')" :active="request()->routeIs('partits.index')">
                         {{ __('Partits') }}
                     </x-nav-link>
-                </div>                  
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('jugadors.index')" :active="request()->routeIs('jugadors.index')">
+                        {{ __('Jugadors') }}
+                    </x-nav-link>
+                </div>                   
             </div>
 
             <!-- Settings Dropdown -->
@@ -81,6 +86,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('partits.index')" :active="request()->routeIs('partits.index')">
                 {{ __('Partits') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('jugadors.index')" :active="request()->routeIs('jugadors.index')">
+                {{ __('Jugadors') }}
             </x-responsive-nav-link>
         </div>       
 

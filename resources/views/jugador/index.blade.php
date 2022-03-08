@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('template_title')  
-    Equip
+@section('template_title')
+    Jugador
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Equip') }}
+                                {{ __('Jugador') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('equips.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('jugadors.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,47 +36,37 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Equip</th>
+										<th>Nom</th>
+										<th>Equip Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($equips as $equip)
+                                    @foreach ($jugadors as $jugador)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $equip->equip }}</td>
+											<td>{{ $jugador->nom }}</td>
+											<td>{{ $jugador->equip->equip }}</td>
 
                                             <td>
-                                                <form action="{{ route('equips.destroy',$equip->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('equips.show',$equip->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('equips.edit',$equip->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('jugadors.destroy',$jugador->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('jugadors.show',$jugador->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('jugadors.edit',$jugador->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
-                                        </tr> 
-                                        @foreach ($equip->partitsJugats() as $partit)
-                                        <tr>
-                                            <td> </td>
-											<td>{{ $partit->data }}</td>
-											<td>{{ $partit->equipLocal->equip }}</td>
-											<td>{{ $partit->equipVisitant->equip }}</td>
-											<td>{{ $partit->golsLocal }}</td>
-											<td>{{ $partit->golsVisitant }}</td>
                                         </tr>
-                                        @endforeach
-                                        
-
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                {!! $equips->links() !!}
+                {!! $jugadors->links() !!}
             </div>
         </div>
     </div>
