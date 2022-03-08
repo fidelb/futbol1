@@ -16,6 +16,16 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('equips.index')" :active="request()->routeIs('equips.index')">
+                        {{ __('Equips') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('partits.index')" :active="request()->routeIs('partits.index')">
+                        {{ __('Partits') }}
+                    </x-nav-link>
+                </div>                  
             </div>
 
             <!-- Settings Dropdown -->
@@ -66,7 +76,13 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-        </div>
+            <x-responsive-nav-link :href="route('equips.index')" :active="request()->routeIs('equips.index')">
+                {{ __('Equips') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('partits.index')" :active="request()->routeIs('partits.index')">
+                {{ __('Partits') }}
+            </x-responsive-nav-link>
+        </div>       
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

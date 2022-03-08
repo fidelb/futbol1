@@ -21,6 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('equips', 'App\Http\Controllers\EquipController')->middleware(['auth'])->name('equip.index', 'equips');
+Route::resource('equips', 'App\Http\Controllers\EquipController')->middleware(['auth']);
+
+Route::resource('partits', 'App\Http\Controllers\PartitController')->middleware(['auth']);
 
 require __DIR__.'/auth.php';

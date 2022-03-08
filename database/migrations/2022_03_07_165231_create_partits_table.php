@@ -17,7 +17,7 @@ class CreatePartitsTable extends Migration
             $table->id();
 
             
-            $table->timestamp('data');
+            $table->timestamp('data')->nullable();
             $table->unsignedBigInteger('equipLocal_id')->nullable();
             $table->unsignedBigInteger('equipVisitant_id')->nullable();
             $table->integer('golsLocal');

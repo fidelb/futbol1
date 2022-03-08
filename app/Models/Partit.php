@@ -24,8 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 class Partit extends Model
 {
     
-    static $rules = [
-		'data' => 'required',
+    static $rules = [		
 		'golsLocal' => 'required',
 		'golsVisitant' => 'required',
     ];
