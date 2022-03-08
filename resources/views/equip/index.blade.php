@@ -68,6 +68,13 @@
 											<td>{{ $partit->golsVisitant }}</td>
                                         </tr>
                                         @endforeach
+
+                                        @foreach ($equip->jugadors as $jugador)
+                                        <tr>
+                                            <td> </td>
+											<td>{{ $jugador->nom }}</td>											
+                                        </tr>
+                                        @endforeach
                                         
 
                                     @endforeach
