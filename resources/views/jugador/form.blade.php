@@ -10,9 +10,18 @@
                 {!! $errors->first('nom', '<div class="invalid-feedback">:message</div>') !!}                
             </tr>
             <tr>
-                <th scope="row">{{ Form::label('equip_id') }}</th>                            
-                <td>{{ Form::text('equip_id', $jugador->equip_id, ['class' => 'form-control' . ($errors->has('equip_id') ? ' is-invalid' : ''), 'placeholder' => 'Equip Id']) }}</td>
-                {!! $errors->first('equip_id', '<div class="invalid-feedback">:message</div>') !!}                
+                <th scope="row">{{ Form::label('equip_id') }}</th> 
+                <td>
+                    @php
+                        use App\Models\Equip;
+                        $equips = Equip::all();   
+                    @endphp 
+                    <select name="equip_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        @foreach($equips as $equip)
+                        <option value="{{$equip->id}}" class="text-xl font-bold p-1" {{ $equip->id==$jugador->equip_id ? 'selected' : '' }}>{{$equip->equip}}</option>  
+                        @endforeach                      
+                    </select> 
+                    {!! $errors->first('equip_id', '<div class="invalid-feedback">:message</div>') !!}                
             </tr>           
             </tbody>
             
