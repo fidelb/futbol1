@@ -18,7 +18,7 @@
                     @endphp 
                     <select name="equip_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         @foreach($equips as $equip)
-                        <option value="{{$equip->id}}" class="text-xl font-bold p-1" {{ $equip->id==$jugador->equip_id ? 'selected' : '' }}>{{$equip->equip}}</option>  
+                        <option value="{{$equip->id}}" class="p-1" {{ $equip->id==$jugador->equip_id ? 'selected' : '' }}>{{$equip->equip}}</option>  
                         @endforeach                      
                     </select> 
                     {!! $errors->first('equip_id', '<div class="invalid-feedback">:message</div>') !!}                
