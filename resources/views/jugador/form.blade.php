@@ -1,19 +1,25 @@
-<div class="box box-info padding-1">
-    <div class="box-body">
+<div class="rounded overflow-hidden shadow bg-white mx-2 w-full">    
+    <div class="table-responsive table-striped">
+        <table class="table text-grey-darkest">
+            <thead class="bg-grey-dark text-white text-normal">            
+            </thead>
+            <tbody>            
+            <tr>
+                <th scope="row">{{ Form::label('nom') }}</th>                            
+                <td>{{ Form::text('nom', $jugador->nom, ['class' => 'form-control' . ($errors->has('nom') ? ' is-invalid' : ''), 'placeholder' => 'Nom']) }}</td>
+                {!! $errors->first('nom', '<div class="invalid-feedback">:message</div>') !!}                
+            </tr>
+            <tr>
+                <th scope="row">{{ Form::label('equip_id') }}</th>                            
+                <td>{{ Form::text('equip_id', $jugador->equip_id, ['class' => 'form-control' . ($errors->has('equip_id') ? ' is-invalid' : ''), 'placeholder' => 'Equip Id']) }}</td>
+                {!! $errors->first('equip_id', '<div class="invalid-feedback">:message</div>') !!}                
+            </tr>           
+            </tbody>
+            
+        </table>
+        </div>
         
-        <div class="form-group">
-            {{ Form::label('nom') }}
-            {{ Form::text('nom', $jugador->nom, ['class' => 'form-control' . ($errors->has('nom') ? ' is-invalid' : ''), 'placeholder' => 'Nom']) }}
-            {!! $errors->first('nom', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('equip_id') }}
-            {{ Form::text('equip_id', $jugador->equip_id, ['class' => 'form-control' . ($errors->has('equip_id') ? ' is-invalid' : ''), 'placeholder' => 'Equip Id']) }}
-            {!! $errors->first('equip_id', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-
-    </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+</div>
+<div class="px-6 py-2 border-b border-light-grey float-right">
+    <button type="submit" class="bg-green-500 hover:bg-green-800 text-white font-light py-1 px-2 rounded-full">Desar</button>                   
 </div>

@@ -12,8 +12,8 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Create Jugador</span>
+                    <div class="card-header m-4">
+                        <span class="font-bold text-xl">Crear Jugador</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('jugadors.store') }}"  role="form" enctype="multipart/form-data">

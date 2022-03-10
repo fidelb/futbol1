@@ -12,8 +12,8 @@
                 @includeif('partials.errors')
 
                 <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Update Jugador</span>
+                    <div class="card-header m-4">
+                        <span class="font-bold text-xl">Editar Jugador</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('jugadors.update', $jugador->id) }}"  role="form" enctype="multipart/form-data">
